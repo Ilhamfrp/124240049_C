@@ -34,6 +34,19 @@ void Tampilan() {
     }
     cout << "====================================\n";
 }
+
+// mengurutkan nama roti
+void sortnama() {
+    for (int i = 0; i < jumlah - 1; i++) {
+        for (int j = i + 1; j < jumlah; j++) {
+            if (daftarRoti[i].nama > daftarRoti[j].nama) {
+                swap(daftarRoti[i], daftarRoti[j]);
+            }
+        }
+    }
+}
+
+
 //Ascending
 void quickSort(Roti arr[], int awal, int akhir) {
     int low = awal, high = akhir;
@@ -130,6 +143,7 @@ int main() {
                 string nama;
                 cout << "Masukkan nama roti: ";
                 getline(cin, nama);
+                sortnama(); 
                 Binary(nama);
                 break;
             }
